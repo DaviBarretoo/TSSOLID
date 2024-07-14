@@ -2,10 +2,13 @@
 
 // press ctrl + space + enter for import automatic
 
+import { Discount } from './discount';
 import { CartItem } from './interfaces/cart-item';
 
 export class ShoppingCart {
   private readonly _items: CartItem[] = [];
+
+  constructor(private readonly discount: Discount) {}
 
   addItem(item: CartItem): void {
     this._items.push(item);
@@ -33,9 +36,8 @@ export class ShoppingCart {
 
   //TOTAL WITH DISCOUNT
   totalWithDicout(): number {
-    return this.total() - this.total() * 0.1;
+    return this.discount.calculate(this.total());
   }
-
   //If it's just a validation you can leave it but if it's more than one I must separate
   isEmpty(): boolean {
     return this._items.length === 0;

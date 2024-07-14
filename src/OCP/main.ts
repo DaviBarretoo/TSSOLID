@@ -2,12 +2,20 @@
 
 // Code for tests
 import { Messaging } from './services/messaging';
-import { Order } from './entities/order';
-import { Persistency } from './services/persistency';
-import { Product } from './entities/product';
-import { ShoppingCart } from './entities/shopping-cart';
 
-const shoppingCart = new ShoppingCart();
+import { Order } from './classes/order';
+
+import { Persistency } from './services/persistency';
+
+import { ShoppingCart } from './classes/shopping-cart';
+import { Product } from './classes/product';
+
+import { TenPercentDiscount } from './classes/discount';
+
+//const fifthPercentDiscount = new FifthPercentDiscount();
+
+const tenPercentDiscount = new TenPercentDiscount();
+const shoppingCart = new ShoppingCart(tenPercentDiscount);
 const persistency = new Persistency();
 const messaging = new Messaging();
 
