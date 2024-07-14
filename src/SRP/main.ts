@@ -3,11 +3,11 @@
 //Inject Dependencies, starts the program
 
 // Code for tests
-import { Messaging } from './messaging';
-import { Order } from './order';
-import { Persistency } from './persistency';
-import { Product } from './product';
-import { ShoppingCart } from './shopping-cart';
+import { Messaging } from './services/messaging';
+import { Order } from './entities/order';
+import { Persistency } from './services/persistency';
+import { Product } from './entities/product';
+import { ShoppingCart } from './entities/shopping-cart';
 
 const shoppingCart = new ShoppingCart();
 const persistency = new Persistency();

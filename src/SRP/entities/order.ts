@@ -1,6 +1,7 @@
+// entidades são a parte do programa que nós da dinheiro
 import { OrderStatus } from './interfaces/order-status';
-import { Messaging } from './messaging';
-import { Persistency } from './persistency';
+import { Messaging } from '../services/messaging';
+import { Persistency } from '../services/persistency';
 import { ShoppingCart } from './shopping-cart';
 
 export class Order {
