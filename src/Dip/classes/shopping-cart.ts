@@ -2,10 +2,12 @@
 
 // press ctrl + space + enter for import automatic
 
-import { Discount } from './discount';
+import { Discount } from './discount'; // classe abstrata
 import { CartItem } from './interfaces/cart-item';
+import { ShoppingCartProtocol } from './interfaces/shopping-cart-protocol';
 
-export class ShoppingCart {
+//ctrl + enter go to code of extends
+export class ShoppingCart implements ShoppingCartProtocol {
   private readonly _items: CartItem[] = [];
 
   constructor(private readonly discount: Discount) {}
