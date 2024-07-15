@@ -32,6 +32,8 @@ export class Order {
       `Seu pedido com o total de R$ ${this.cart.totalWithDicout()} foi recebido`,
     );
     this.persistency.saveOrder();
+
     this.cart.clear();
+    console.log('O cliente é', this.customer.getName(), this.customer.getIDN());
   }
 }
